@@ -91,7 +91,7 @@ namespace Assets.Code.Animation
                 _activeAnimations.Remove(spriteRenderer);
         }
 
-        void Update()
+        internal void Update()
         {
             foreach (var animation in _activeAnimations)
             {

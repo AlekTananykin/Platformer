@@ -9,11 +9,13 @@ namespace Assets.Code.Animation
 {
     public enum Track
     {
+        idle,
         walk,
-        jump
+        run,
+        attack
     }
 
-    [CreateAssetMenu (fileName ="SpriteAnimationconfig", 
+    [CreateAssetMenu (fileName ="SpriteAnimationConfig", 
         menuName ="Configs/SpriteAnimationconfig")]
     public class SpriteAnimationConfig: ScriptableObject
     {

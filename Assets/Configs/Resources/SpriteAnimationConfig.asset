@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96d57102a308a646a5f5438149a1360, type: 3}
+  m_Name: SpriteAnimationConfig
+  m_EditorClassIdentifier: 
+  Sequences:
+  - Track: 0
+    Sprites:
+    - {fileID: 5731584507761909605, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -7615759149648210162, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -1516033387003549848, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+  - Track: 1
+    Sprites:
+    - {fileID: -4784937291257459594, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -2896677429709300588, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -1237044410232977109, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 4255292104823726704, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 4255292104823726704, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 2375208054730090502, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 7135723650130993342, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -2211983078384136945, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -3783999413710591504, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+  - Track: 2
+    Sprites:
+    - {fileID: -596610279889723890, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -4286994160140225813, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 4998874239661532241, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -5628293126165128258, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -8695892203303655000, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 1247079759622273812, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -1759791881078805778, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -749623694445501194, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+  - Track: 3
+    Sprites:
+    - {fileID: -692223422303060308, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 6750193663811815428, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 6960232714566914390, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -6192669274392354610, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 7806576474772676222, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 1350054635072634140, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
