@@ -29,7 +29,6 @@ public class GameController : MonoBehaviour
         _controlersStorage.Initialize();
     }
 
-    
     void Update()
     {
         float deltaTime = Time.deltaTime;

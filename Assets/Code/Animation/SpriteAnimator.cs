@@ -19,7 +19,7 @@ namespace Assets.Code.Animation
             public Track Trak;
             public List<Sprite> Sprites;
             public bool Loop = false;
-            public float Speed = 10f;
+            public float Speed = 0f;
             public float Counter = 1;
             public bool Sleeps;
 
@@ -28,7 +28,7 @@ namespace Assets.Code.Animation
                 if (Sleeps)
                     return;
 
-                Counter = Time.deltaTime * Speed;
+                Counter += Time.deltaTime* Speed;
 
                 if (Loop)
                 {
