@@ -1,4 +1,4 @@
-﻿using Assets.Code.Animation;
+﻿using Assets.Code.Configs;
 using Assets.Code.Interfaces;
 using Assets.Code.Models;
 using Assets.Code.Views;
@@ -11,32 +11,38 @@ using UnityEngine;
 
 namespace Assets.Code.Controllers
 {
-    internal class HeroController: IExecute
+    internal class HeroController: IExecute, IInitialization
     {
         private HeroView _view;
         private HeroModel _model;
         private SpriteAnimationConfig _animationsConfig;
         private SpriteAnimator _spriteAnimator;
+        private GameObjectFabric _gameObjectFabric;
 
         internal HeroController(GameObjectFabric gameObjectFabric)
         {
-            _model = new HeroModel() { Speed = 10 };
+            _gameObjectFabric = gameObjectFabric;
+            _model = new HeroModel() { Speed = 10, AnimationSpeed = 10 };
+        }
 
-            GameObject hero = gameObjectFabric.CreateCharecter();
+        public void Execute(float deltaTime)
+        {
+            _spriteAnimator.Update(deltaTime);
+        }
+
+        public void Initialize()
+        {
+            GameObject hero = _gameObjectFabric.CreateCharecter();
             _view = hero.AddComponent<HeroView>();
             _view.SpriteRenderer = hero.GetComponentInChildren<SpriteRenderer>();
 
 
             _animationsConfig =
-                Resources.Load<SpriteAnimationConfig>("SpriteAnimationConfig");
+                Resources.Load<SpriteAnimationConfig>("HeroSpriteAnimationConfig");
             _spriteAnimator = new SpriteAnimator(_animationsConfig);
 
-            _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.walk, true, _model.Speed);
-        }
-
-        public void Execute(float deltaTime)
-        {
-            _spriteAnimator.Update();
+            _spriteAnimator.StartAnimation(
+                _view.SpriteRenderer, Track.walk, true, _model.AnimationSpeed);
         }
     }
 }

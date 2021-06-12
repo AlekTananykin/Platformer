@@ -23,5 +23,15 @@ namespace Assets.Code.Views
             return _charecter;
         }
 
+        GameObject _ogrePrefab;
+        internal GameObject CreateOgre()
+        {
+            if (null == _ogrePrefab)
+            {
+                _ogrePrefab = Resources.Load<GameObject>("Ogre");
+            }
+            return GameObject.Instantiate(_ogrePrefab);
+        }
+
     }
 }

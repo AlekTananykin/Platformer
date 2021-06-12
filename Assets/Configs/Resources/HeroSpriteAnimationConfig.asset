@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96d57102a308a646a5f5438149a1360, type: 3}
-  m_Name: SpriteAnimationConfig
+  m_Name: HeroSpriteAnimationConfig
   m_EditorClassIdentifier: 
   Sequences:
   - Track: 0

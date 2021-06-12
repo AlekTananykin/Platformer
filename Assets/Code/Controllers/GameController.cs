@@ -1,4 +1,4 @@
-using Assets.Code.Animation;
+using Assets.Code.Configs;
 using Assets.Code.Controllers;
 using Assets.Code.Views;
 using System.Collections;
@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     GameObjectFabric _gameObjectsFabric;
 
     ControllersStorage _controlersStorage;
+
 
     void Start()
     {

@@ -8,5 +8,7 @@ namespace Assets.Code.Models
 {
     class OgreModel
     {
+        internal float Speed;
+        internal float AnimationSpeed;
     }
 }

@@ -9,5 +9,6 @@ namespace Assets.Code.Models
     internal sealed class HeroModel
     {
         internal float Speed;
+        internal float AnimationSpeed;
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Code.Animation
+namespace Assets.Code.Configs
 {
     public enum Track
     {

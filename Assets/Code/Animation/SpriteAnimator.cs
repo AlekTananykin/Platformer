@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Code.Animation
+namespace Assets.Code.Configs
 {
     internal class SpriteAnimator : IDisposable
     {
@@ -23,12 +23,12 @@ namespace Assets.Code.Animation
             public float Counter = 1;
             public bool Sleeps;
 
-            public void Update()
+            public void Update(float deltaTime)
             {
                 if (Sleeps)
                     return;
 
-                Counter += Time.deltaTime* Speed;
+                Counter += deltaTime* Speed;
 
                 if (Loop)
                 {
@@ -91,11 +91,11 @@ namespace Assets.Code.Animation
                 _activeAnimations.Remove(spriteRenderer);
         }
 
-        internal void Update()
+        internal void Update(float deltaTime)
         {
             foreach (var animation in _activeAnimations)
             {
-                animation.Value.Update();
+                animation.Value.Update(deltaTime);
                 animation.Key.sprite = 
                     animation.Value.Sprites[(int)animation.Value.Counter];
             }
