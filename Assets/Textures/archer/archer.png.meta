@@ -95,6 +95,15 @@ TextureImporter:
   - first:
       213: -692223422303060308
     second: archer_24
+  - first:
+      213: 4216426741142755077
+    second: archer_3
+  - first:
+      213: 2755607612910650718
+    second: archer_21
+  - first:
+      213: -8210838736343395885
+    second: archer_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -143,7 +152,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -199,12 +208,12 @@ TextureImporter:
       name: archer_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 554
-        width: 112
+        x: 4
+        y: 460
+        width: 97
         height: 113
-      alignment: 9
-      pivot: {x: 0.3181173, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +229,12 @@ TextureImporter:
       name: archer_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 552
-        width: 99
+        x: 121
+        y: 460
+        width: 97
         height: 113
-      alignment: 9
-      pivot: {x: 0.3236289, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,12 +250,12 @@ TextureImporter:
       name: archer_2
       rect:
         serializedVersion: 2
-        x: 234
-        y: 552
-        width: 102
-        height: 113
-      alignment: 9
-      pivot: {x: 0.32881615, y: 0.5}
+        x: 235
+        y: 459
+        width: 95
+        height: 114
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -263,11 +272,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 455
-        y: 551
-        width: 108
-        height: 116
-      alignment: 9
-      pivot: {x: 0.4461088, y: 0.5}
+        y: 458
+        width: 102
+        height: 115
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,12 +292,12 @@ TextureImporter:
       name: archer_5
       rect:
         serializedVersion: 2
-        x: 589
-        y: 551
-        width: 109
-        height: 116
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        x: 568
+        y: 459
+        width: 98
+        height: 114
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -305,11 +314,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 418
-        width: 97
+        y: 342
+        width: 92
         height: 113
-      alignment: 9
-      pivot: {x: 0.5150006, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -326,11 +335,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 106
-        y: 422
+        y: 346
         width: 103
-        height: 110
-      alignment: 9
-      pivot: {x: 0.54238015, y: 0.5}
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -347,11 +356,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 223
-        y: 419
+        y: 344
         width: 106
-        height: 113
-      alignment: 9
-      pivot: {x: 0.45881882, y: 0.5}
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,12 +376,12 @@ TextureImporter:
       name: archer_10
       rect:
         serializedVersion: 2
-        x: 351
-        y: 419
-        width: 97
-        height: 113
-      alignment: 9
-      pivot: {x: 0.4249966, y: 0.5}
+        x: 471
+        y: 345
+        width: 83
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,12 +397,12 @@ TextureImporter:
       name: archer_11
       rect:
         serializedVersion: 2
-        x: 470
-        y: 419
-        width: 90
-        height: 113
-      alignment: 9
-      pivot: {x: 0.4029958, y: 0.5}
+        x: 582
+        y: 345
+        width: 91
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -409,12 +418,12 @@ TextureImporter:
       name: archer_12
       rect:
         serializedVersion: 2
-        x: 606
-        y: 419
-        width: 93
-        height: 113
-      alignment: 9
-      pivot: {x: 0.42177066, y: 0.5}
+        x: 8
+        y: 230
+        width: 97
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,12 +439,12 @@ TextureImporter:
       name: archer_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 295
-        width: 105
-        height: 116
-      alignment: 9
-      pivot: {x: 0.5415731, y: 0.5}
+        x: 119
+        y: 233
+        width: 101
+        height: 108
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -451,12 +460,12 @@ TextureImporter:
       name: archer_14
       rect:
         serializedVersion: 2
-        x: 119
-        y: 299
-        width: 101
+        x: 230
+        y: 228
+        width: 106
         height: 112
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -472,12 +481,12 @@ TextureImporter:
       name: archer_15
       rect:
         serializedVersion: 2
-        x: 230
-        y: 299
-        width: 106
-        height: 112
-      alignment: 9
-      pivot: {x: 0.48627284, y: 0.5}
+        x: 358
+        y: 225
+        width: 90
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -493,12 +502,12 @@ TextureImporter:
       name: archer_16
       rect:
         serializedVersion: 2
-        x: 359
-        y: 299
-        width: 90
-        height: 112
-      alignment: 9
-      pivot: {x: 0.41916302, y: 0.5}
+        x: 463
+        y: 221
+        width: 97
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -514,12 +523,12 @@ TextureImporter:
       name: archer_17
       rect:
         serializedVersion: 2
-        x: 463
-        y: 299
-        width: 97
-        height: 112
-      alignment: 9
-      pivot: {x: 0.49999967, y: 0.5}
+        x: 566
+        y: 235
+        width: 107
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -535,12 +544,12 @@ TextureImporter:
       name: archer_18
       rect:
         serializedVersion: 2
-        x: 592
-        y: 299
-        width: 107
-        height: 112
-      alignment: 9
-      pivot: {x: 0.5271971, y: 0.5}
+        x: 0
+        y: 120
+        width: 112
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -556,12 +565,12 @@ TextureImporter:
       name: archer_19
       rect:
         serializedVersion: 2
-        x: 0
-        y: 161
-        width: 112
-        height: 111
-      alignment: 9
-      pivot: {x: 0.4999999, y: 0.5}
+        x: 124
+        y: 121
+        width: 100
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -574,99 +583,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: archer_26
-      rect:
-        serializedVersion: 2
-        x: 370
-        y: 17
-        width: 122
-        height: 112
-      alignment: 9
-      pivot: {x: 0.2614651, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40888988f518dad50800000000000000
-      internalID: 6750193663811815428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: archer_27
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 15
-        width: 98
-        height: 113
-      alignment: 9
-      pivot: {x: 0.3663719, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65150d9e6c6b79060800000000000000
-      internalID: 6960232714566914390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: archer_28
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 17
-        width: 91
-        height: 111
-      alignment: 9
-      pivot: {x: 0.37208238, y: 0.47378287}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec02e58ea183f0aa0800000000000000
-      internalID: -6192669274392354610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: archer_29
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 17
-        width: 101
-        height: 111
-      alignment: 9
-      pivot: {x: 0.31271484, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7e1fba51f7865c60800000000000000
-      internalID: 7806576474772676222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: archer_20
       rect:
         serializedVersion: 2
-        x: 124
-        y: 163
-        width: 100
-        height: 110
-      alignment: 9
-      pivot: {x: 0.47089875, y: 0.5}
+        x: 252
+        y: 1
+        width: 101
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -682,12 +607,12 @@ TextureImporter:
       name: archer_24
       rect:
         serializedVersion: 2
-        x: 600
-        y: 159
-        width: 106
-        height: 114
-      alignment: 9
-      pivot: {x: 0.40391052, y: 0.5}
+        x: 370
+        y: 1
+        width: 122
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -700,22 +625,106 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: archer_30
+      name: archer_3
       rect:
         serializedVersion: 2
-        x: 553
-        y: 17
-        width: 157
-        height: 111
-      alignment: 9
-      pivot: {x: 0.21269469, y: 0.5}
+        x: 351
+        y: 346
+        width: 97
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1dbfd6a98b5cb210800000000000000
-      internalID: 1350054635072634140
+      spriteID: 507954f08c1c38a30800000000000000
+      internalID: 4216426741142755077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_21
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 109
+        width: 106
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55c6eb2682ed3620800000000000000
+      internalID: 2755607612910650718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_22
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 98
+        height: 115
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d11c341cad3d0e80800000000000000
+      internalID: -8210838736343395885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_23
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 91
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d0ac7f6a80c4070800000000000000
+      internalID: 8091852143692746023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_25
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 3
+        width: 151
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b3ad055e1df7010800000000000000
+      internalID: 1188899609483295625
       vertices: []
       indices: 
       edges: []

@@ -5,4 +5,5 @@ using UnityEngine;
 public class HeroView : MonoBehaviour
 {
     public SpriteRenderer SpriteRenderer;
+    public Transform Transform;
 }
