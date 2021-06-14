@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Assets.Code.Controllers
 {
-    internal class HeroController: IExecute, IInitialization
+    internal class HeroController : IExecute, IInitialization
     {
         private HeroView _view;
         private HeroModel _model;
@@ -24,11 +24,12 @@ namespace Assets.Code.Controllers
 
         private float _xAxisInput;
         private bool _doJump;
-        
+
+        private readonly float _groundLevel = -2f;
 
         internal HeroController(GameObjectFabric gameObjectFabric)
         {
-            
+
             _gameObjectFabric = gameObjectFabric;
             _model = new HeroModel();
         }
@@ -36,31 +37,63 @@ namespace Assets.Code.Controllers
         public void Execute(float deltaTime)
         {
             _xAxisInput = Input.GetAxis("Horizontal");
-            _doJump = Input.GetAxis("Vertical") > 0;
+
+            _doJump = Input.GetAxis("Vertical") > 0.0f;
+            bool isGoSideWay = Mathf.Abs(_xAxisInput) > _model.MovingEpsilon;
+
+            if (isGoSideWay)
+            {
+                TurnToward();
+                MoveToward(deltaTime, _model.WalkSpeed);
+            }
+
 
             if (IsGrounded())
             {
                 if (_doJump)
                 {
-                    
-                }
+                    _model.YVelocity = _model.JumpStartSpeed;
 
-                if (0 == _xAxisInput)
+                    _spriteAnimator.StartAnimation(
+                        _view.SpriteRenderer, Track.jump, true,
+                        _model.AnimationSpeed);
+                }
+                else if (0 > _model.YVelocity)
+                {
+                    _model.YVelocity = 0;
+                    _view.Transform.position = new Vector3(
+                        _view.Transform.position.x,
+                        _groundLevel,
+                        _view.Transform.position.z);
+
+                    _spriteAnimator.StartAnimation(
+                        _view.SpriteRenderer, Track.idle, true,
+                        _model.AnimationSpeed);
+                }
+                else if (isGoSideWay)
                 {
                     _spriteAnimator.StartAnimation(
-                        _view.SpriteRenderer, Track.idle, true, _model.AnimationSpeed);
+                   _view.SpriteRenderer, Track.walk, true,
+                   _model.AnimationSpeed);
                 }
                 else
                 {
-                    TurnToward();
-                    MoveToward(deltaTime, _model.WalkSpeed);
-
                     _spriteAnimator.StartAnimation(
-                        _view.SpriteRenderer, Track.walk, true,
-                        _model.AnimationSpeed);
+                   _view.SpriteRenderer, Track.idle, true,
+                   _model.AnimationSpeed);
                 }
             }
+            else
+            {
+                if (Mathf.Abs(_model.YVelocity) > _model.FlyEpsilon)
+                {
+                    _spriteAnimator.StartAnimation(
+                        _view.SpriteRenderer, Track.idle, true, _model.AnimationSpeed);
 
+                }
+                _model.YVelocity += _model.Gravity * deltaTime;
+                _view.Transform.position += Vector3.up * deltaTime * _model.YVelocity;
+            }
 
             _spriteAnimator.Update(deltaTime);
         }
@@ -71,7 +104,7 @@ namespace Assets.Code.Controllers
             _view = hero.AddComponent<HeroView>();
             _view.SpriteRenderer = hero.GetComponentInChildren<SpriteRenderer>();
             _view.Transform = hero.transform;
-            _view.Transform.position = new Vector3(-6f, _model.GroundLevel, 0f);
+            _view.Transform.position = new Vector3(-6f, _groundLevel, 0f);
 
 
             _animationsConfig =
@@ -84,19 +117,20 @@ namespace Assets.Code.Controllers
 
         private void TurnToward()
         {
-            _view.Transform.localScale = 
+            _view.Transform.localScale =
                 (_xAxisInput < 0) ? _leftScale : _rightScale;
         }
 
         private void MoveToward(float deltaTime, float speed)
         {
-            _view.transform.position += Vector3.right * 
-                deltaTime * speed * ((_xAxisInput < 0)? -1.0f: 1.0f);
+            _view.transform.position += Vector3.right *
+                deltaTime * speed * ((_xAxisInput < 0) ? -1.0f : 1.0f);
         }
 
         private bool IsGrounded()
         {
-            return _view.Transform.position.y < _model.GroundLevel + float.Epsilon && _model.YVelocity <= 0;
+            return _view.Transform.position.y < _groundLevel + 0.01
+                && _model.YVelocity <= 0;
         }
 
     }

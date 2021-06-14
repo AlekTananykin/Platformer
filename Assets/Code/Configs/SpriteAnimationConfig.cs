@@ -12,6 +12,7 @@ namespace Assets.Code.Configs
         idle,
         walk,
         run,
+        jump,
         attack
     }
 

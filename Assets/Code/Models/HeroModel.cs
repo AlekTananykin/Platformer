@@ -15,15 +15,12 @@ namespace Assets.Code.Models
         internal readonly float JumpStartSpeed = 7.0f;
         internal readonly float MovingEpsilon = 0.1f;
         internal readonly float FlyEpsilon = 0.1f;
-        internal readonly float GroundLevel = -2f;
-        internal readonly float Gravity = 9.8f;
+        
+        internal readonly float Gravity = -9.8f;
 
 
 
         internal float YVelocity;
-        internal bool IsGrounded;
-
-
 
     }
 }
