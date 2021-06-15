@@ -28,6 +28,9 @@ MonoBehaviour:
     - {fileID: 2375208054730090502, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
     - {fileID: 7135723650130993342, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
     - {fileID: -2211983078384136945, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+  - Track: 3
+    Sprites:
+    - {fileID: -2896677429709300588, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
   - Track: 2
     Sprites:
     - {fileID: -596610279889723890, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
@@ -38,14 +41,11 @@ MonoBehaviour:
     - {fileID: 1247079759622273812, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
     - {fileID: -1759791881078805778, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
     - {fileID: -749623694445501194, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
-  - Track: 3
+  - Track: 4
     Sprites:
+    - {fileID: 2755607612910650718, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -8210838736343395885, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 8091852143692746023, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: -749623694445501194, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
     - {fileID: -692223422303060308, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
-    - {fileID: 6750193663811815428, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
-    - {fileID: 6960232714566914390, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
-    - {fileID: -6192669274392354610, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
-    - {fileID: 7806576474772676222, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
-    - {fileID: 1350054635072634140, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
-  - Track: 3
-    Sprites:
-    - {fileID: 4216426741142755077, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}
+    - {fileID: 1188899609483295625, guid: 3d0fe82765bd752429eddbdb92969a94, type: 3}

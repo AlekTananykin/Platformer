@@ -55,7 +55,7 @@ namespace Assets.Code.Controllers
                     _model.YVelocity = _model.JumpStartSpeed;
 
                     _spriteAnimator.StartAnimation(
-                        _view.SpriteRenderer, Track.jump, true,
+                        _view.SpriteRenderer, Track.idle, true,
                         _model.AnimationSpeed);
                 }
                 else if (0 > _model.YVelocity)
@@ -88,7 +88,7 @@ namespace Assets.Code.Controllers
                 if (Mathf.Abs(_model.YVelocity) > _model.FlyEpsilon)
                 {
                     _spriteAnimator.StartAnimation(
-                        _view.SpriteRenderer, Track.idle, true, _model.AnimationSpeed);
+                        _view.SpriteRenderer, Track.jump, true, _model.AnimationSpeed);
 
                 }
                 _model.YVelocity += _model.Gravity * deltaTime;
