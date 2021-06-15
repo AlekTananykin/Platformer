@@ -22,11 +22,7 @@ namespace Assets.Code.Controllers
         internal OgreController(GameObjectFabric gameObjectFabric)
         {
             _gameObjectFabric = gameObjectFabric;
-            _model = new OgreModel()
-            {
-                Speed = 10,
-                AnimationSpeed = 10
-            };
+            _model = new OgreModel();
 
             
         }

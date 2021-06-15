@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Code.Views
+namespace Assets.Code.Models
 {
-    internal class OgreView: MonoBehaviour
+    internal class CannonModel
     {
-        public SpriteRenderer SpriteRenderer;
-        public Transform Transform;
+        internal Vector3 Position;
     }
 }

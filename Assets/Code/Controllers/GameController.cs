@@ -18,16 +18,17 @@ public class GameController : MonoBehaviour
     void Start()
     {
         _controlersStorage = new ControllersStorage();
-
-        
-
         _gameObjectsFabric = new GameObjectFabric();
 
         HeroController hero = new HeroController(_gameObjectsFabric);
-
         _controlersStorage.Add(hero);
 
+        CannonController cannon = new CannonController(_gameObjectsFabric);
+        _controlersStorage.Add(cannon);
+
         _controlersStorage.Initialize();
+
+        cannon.SetAim(hero.Transform);
     }
 
     void Update()

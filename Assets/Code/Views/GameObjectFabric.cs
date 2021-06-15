@@ -9,7 +9,7 @@ namespace Assets.Code.Views
 {
     internal sealed class GameObjectFabric
     {
-        GameObject _charecter;
+        private GameObject _charecter;
 
         internal GameObject CreateCharecter()
         {
@@ -23,7 +23,7 @@ namespace Assets.Code.Views
             return _charecter;
         }
 
-        GameObject _ogrePrefab;
+        private GameObject _ogrePrefab;
         internal GameObject CreateOgre()
         {
             if (null == _ogrePrefab)
@@ -31,6 +31,16 @@ namespace Assets.Code.Views
                 _ogrePrefab = Resources.Load<GameObject>("Ogre");
             }
             return GameObject.Instantiate(_ogrePrefab);
+        }
+
+        GameObject _cannonPrefab;
+        internal GameObject CreateCannon()
+        {
+            if (null == _cannonPrefab)
+            {
+                _cannonPrefab = Resources.Load<GameObject>("Cannon");
+            }
+            return GameObject.Instantiate(_cannonPrefab);
         }
 
     }

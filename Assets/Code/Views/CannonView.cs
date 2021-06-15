@@ -7,9 +7,9 @@ using UnityEngine;
 
 namespace Assets.Code.Views
 {
-    internal class OgreView: MonoBehaviour
+    internal class CannonView
     {
-        public SpriteRenderer SpriteRenderer;
-        public Transform Transform;
+        internal Transform Transform;
+        internal SpriteRenderer Muzzle;
     }
 }

@@ -27,6 +27,8 @@ namespace Assets.Code.Controllers
 
         private readonly float _groundLevel = -2f;
 
+        public Transform Transform => _view.transform;
+
         internal HeroController(GameObjectFabric gameObjectFabric)
         {
 
