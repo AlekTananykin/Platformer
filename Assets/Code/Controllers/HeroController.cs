@@ -1,6 +1,7 @@
 ﻿using Assets.Code.Configs;
 using Assets.Code.Interfaces;
 using Assets.Code.Models;
+using Assets.Code.PlayerInput;
 using Assets.Code.Views;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace Assets.Code.Controllers
         private SpriteAnimationConfig _animationsConfig;
         private SpriteAnimator _spriteAnimator;
         private GameObjectFabric _gameObjectFabric;
+        private IPlayerInput _playerInput;
 
         private readonly Vector3 _leftScale = new Vector3(-1, 1, 1);
         private readonly Vector3 _rightScale = new Vector3(1, 1, 1);
@@ -29,18 +31,18 @@ namespace Assets.Code.Controllers
 
         public Transform Transform => _view.transform;
 
-        internal HeroController(GameObjectFabric gameObjectFabric)
+        internal HeroController(GameObjectFabric gameObjectFabric, IPlayerInput playerInput)
         {
-
+            _playerInput = playerInput;
             _gameObjectFabric = gameObjectFabric;
             _model = new HeroModel();
         }
 
         public void Execute(float deltaTime)
         {
-            _xAxisInput = Input.GetAxis("Horizontal");
+            _xAxisInput = _playerInput.MoveX;
 
-            _doJump = Input.GetAxis("Vertical") > 0.0f;
+            _doJump = _playerInput.IsJump;
             bool isGoSideWay = Mathf.Abs(_xAxisInput) > _model.MovingEpsilon;
 
             if (isGoSideWay)
