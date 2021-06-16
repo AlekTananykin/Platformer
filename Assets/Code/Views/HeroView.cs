@@ -6,4 +6,5 @@ public class HeroView : MonoBehaviour
 {
     public SpriteRenderer SpriteRenderer;
     public Transform Transform;
+    public Rigidbody2D RidgidBody;
 }

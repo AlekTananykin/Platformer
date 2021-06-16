@@ -43,5 +43,14 @@ namespace Assets.Code.Views
             return GameObject.Instantiate(_cannonPrefab);
         }
 
+        GameObject _platformPrefab;
+        internal GameObject CreatePlatform()
+        {
+            if (null == _platformPrefab)
+            {
+                _platformPrefab = Resources.Load<GameObject>("Platform");
+            }
+            return GameObject.Instantiate(_platformPrefab);
+        }
     }
 }

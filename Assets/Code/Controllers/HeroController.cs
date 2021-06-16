@@ -26,6 +26,7 @@ namespace Assets.Code.Controllers
 
         private float _xAxisInput;
         private bool _doJump;
+        private const float _jumpForce = 700;
 
         private readonly float _groundLevel = -2f;
 
@@ -56,7 +57,7 @@ namespace Assets.Code.Controllers
             {
                 if (_doJump)
                 {
-                    _model.YVelocity = _model.JumpStartSpeed;
+                    _view.RidgidBody.AddForce(Vector2.up * _jumpForce);
 
                     _spriteAnimator.StartAnimation(
                         _view.SpriteRenderer, Track.idle, true,
@@ -96,7 +97,7 @@ namespace Assets.Code.Controllers
 
                 }
                 _model.YVelocity += _model.Gravity * deltaTime;
-                _view.Transform.position += Vector3.up * deltaTime * _model.YVelocity;
+                //_view.Transform.position += Vector3.up * deltaTime * _model.YVelocity;
             }
 
             _spriteAnimator.Update(deltaTime);
@@ -105,10 +106,16 @@ namespace Assets.Code.Controllers
         public void Initialize()
         {
             GameObject hero = _gameObjectFabric.CreateCharecter();
+
+            hero.transform.position = new Vector3(-5f, 0f, 0);
+
             _view = hero.AddComponent<HeroView>();
             _view.SpriteRenderer = hero.GetComponentInChildren<SpriteRenderer>();
             _view.Transform = hero.transform;
             _view.Transform.position = new Vector3(-6f, _groundLevel, 0f);
+
+            _view.RidgidBody = AddRigidBody(hero);
+            AddCapsuleCollider(hero);
 
 
             _animationsConfig =
@@ -117,6 +124,29 @@ namespace Assets.Code.Controllers
 
             _spriteAnimator.StartAnimation(
                 _view.SpriteRenderer, Track.walk, true, _model.AnimationSpeed);
+        }
+
+        private void AddCapsuleCollider(GameObject hero)
+        {
+            var collider = hero.AddComponent<CapsuleCollider2D>();
+            collider.isTrigger = false;
+            collider.usedByEffector = false;
+            collider.offset = new Vector2(-0.2f, 1.1f);
+            collider.size = new Vector2(0.8f, 2.1f);
+            
+            collider.direction = CapsuleDirection2D.Vertical;
+        }
+
+        private Rigidbody2D AddRigidBody(GameObject hero)
+        {
+            var rigidbody = hero.AddComponent<Rigidbody2D>();
+            rigidbody.bodyType = RigidbodyType2D.Dynamic;
+            rigidbody.centerOfMass = new Vector2(0, 0);
+            rigidbody.freezeRotation = true;
+            rigidbody.isKinematic = false;
+            rigidbody.mass = 60;
+            rigidbody.name = "Hero";
+            return rigidbody;
         }
 
         private void TurnToward()

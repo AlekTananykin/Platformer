@@ -30,6 +30,9 @@ public class GameController : MonoBehaviour
         CannonController cannon = new CannonController(_gameObjectsFabric);
         _controlersStorage.Add(cannon);
 
+        PlatformController platform = new PlatformController(_gameObjectsFabric);
+        _controlersStorage.Add(platform);
+
         _controlersStorage.Initialize();
 
         cannon.SetAim(hero.Transform);
