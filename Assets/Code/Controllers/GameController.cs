@@ -32,20 +32,15 @@ public class GameController : MonoBehaviour
 
         PlatformController platform = new PlatformController(_gameObjectsFabric);
         _controlersStorage.Add(platform);
-
         _controlersStorage.Initialize();
 
         cannon.SetAim(hero.Transform);
     }
 
-    void Update()
-    {
-        float deltaTime = Time.deltaTime;
-        _controlersStorage.Execute(deltaTime);
-    }
-
     void FixedUpdate()
     {
+        float deltaTime = Time.fixedDeltaTime;
+        _controlersStorage.Execute(deltaTime);
     }
 
     private void OnDestroy()
