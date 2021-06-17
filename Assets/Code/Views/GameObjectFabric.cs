@@ -52,5 +52,15 @@ namespace Assets.Code.Views
             }
             return GameObject.Instantiate(_platformPrefab);
         }
+
+        GameObject _bulletPrefab;
+        internal GameObject CreateBullet()
+        {
+            if (null == _bulletPrefab)
+            {
+                _bulletPrefab = Resources.Load<GameObject>("Bullet");
+            }
+            return GameObject.Instantiate(_bulletPrefab);
+        }
     }
 }
