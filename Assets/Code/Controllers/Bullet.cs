@@ -21,8 +21,11 @@ namespace Assets.Code.Controllers
 
         public void Throw(Vector2 position, Vector2 velocity)
         {
-            _view.SetVisible(false);
-            _view.Transform.position = position;
+            //_view.SetVisible(false);
+            //_view.Transform.position = position;
+
+            _view.Rigidbody.transform.position = position;
+            _view.Rigidbody.isKinematic = false;
             _view.Rigidbody.velocity = Vector2.zero;
             _view.Rigidbody.angularVelocity = 0;
             _view.Rigidbody.AddForce(velocity, ForceMode2D.Impulse);

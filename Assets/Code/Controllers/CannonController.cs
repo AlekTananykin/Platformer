@@ -41,7 +41,7 @@ namespace Assets.Code.Controllers
             var axis = Vector3.Cross(Vector3.down, dir);
             _muzzleTransform.rotation = Quaternion.AngleAxis(angle, axis);
 
-            _bulletsEmitter.Update(deltaTime, dir);
+            _bulletsEmitter.Update(deltaTime, dir.normalized);
         }
 
         public void Initialize()
@@ -61,13 +61,12 @@ namespace Assets.Code.Controllers
             _muzzleTransform = _view.Transform;
             _config = Resources.Load<CannonConfig>("CannonConfig");
 
-            List<BulletView> bullets = CreateBullets(5);
+            List<BulletView> bullets = CreateBullets(1);
             _bulletsEmitter = new BulletsEmitter(bullets, _view.Transform);
         }
 
         private List<BulletView> CreateBullets(int bulletsCount)
         {
-            GameObject bullet = _fabric.CreateBullet();
             List<BulletView> bullets = new List<BulletView>();
             for (int i = 0; i < bulletsCount; ++i)
             {
@@ -85,6 +84,7 @@ namespace Assets.Code.Controllers
                 Transform = bullet.transform,
                 Rigidbody = CreateBulletRigidBody(bullet)
             };
+            AddCollider(bullet);
             return bulletView;
         }
 
@@ -99,6 +99,17 @@ namespace Assets.Code.Controllers
             rigidbody.mass = 1;
 
             return rigidbody;
+        }
+
+        private CircleCollider2D AddCollider(GameObject bullet)
+        {
+            var collider = bullet.AddComponent<CircleCollider2D>();
+            collider.isTrigger = false;
+            collider.usedByEffector = false;
+            collider.offset = new Vector2(0, 0);
+            collider.radius = 0.148f;
+
+            return collider;
         }
     }
 }

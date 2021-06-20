@@ -12,7 +12,7 @@ namespace Assets.Code.Auxiliary
     internal sealed class BulletsEmitter
     {
         private const float _delay = 1;
-        private const float _startSpeed = 500.0f;
+        private const float _startSpeed = 50.0f;
 
         private List<Bullet> _bullets = new List<Bullet>();
 
