@@ -12,7 +12,7 @@ namespace Assets.Code.Models
         internal readonly float AnimationSpeed = 10.0f;
         internal readonly float WalkSpeed = 3.0f;
         internal readonly float RunSpeed = 10.0f;
-        internal readonly float JumpForce = 30000.0f;
+        internal readonly float JumpForce = 20000.0f;
         internal readonly float JumpThreshuld = 0.1f;
         internal readonly float FlyThreshuld = 1f;
         internal readonly float MovingEpsilon = 0.1f;

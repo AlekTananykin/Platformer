@@ -12,15 +12,19 @@ namespace Assets.Code.Controllers
     internal sealed class PlatformController : IInitialization
     {
         private GameObjectFabric _gameObjectFabric;
+        private Vector2 _position;
 
-        internal PlatformController(GameObjectFabric gameObjectFabric)
+        internal PlatformController(GameObjectFabric gameObjectFabric, Vector2 position)
         {
             _gameObjectFabric = gameObjectFabric;
+            _position = position;
         }
 
         public void Initialize()
         {
             GameObject platform =_gameObjectFabric.CreatePlatform();
+            platform.transform.position = _position;
+            
 
             AddCollider(platform);
         }

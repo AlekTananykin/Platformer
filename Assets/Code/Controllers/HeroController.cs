@@ -86,14 +86,13 @@ namespace Assets.Code.Controllers
 
             GameObject hero = _gameObjectFabric.CreateCharecter();
 
-            hero.transform.position = new Vector3(-5f, 0f, 0);
-
             _view = hero.AddComponent<HeroView>();
             _view.SpriteRenderer = hero.GetComponentInChildren<SpriteRenderer>();
-            _view.Transform = hero.transform;
-            _view.Transform.position = new Vector3(-6f, _groundLevel, 0f);
 
             _view.RidgidBody = AddRigidBody(hero);
+            _view.Transform = _view.RidgidBody.transform;
+            _view.Transform.position = new Vector3(-8f, _groundLevel, 0f);
+
             CapsuleCollider2D collider = AddCapsuleCollider(hero);
             _contactPoller = new ContactsPoller(collider);
 
