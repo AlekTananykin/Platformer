@@ -69,12 +69,23 @@ namespace Assets.Code.Views
         {
             if (null == _camera)
             {
-                //GameObject cameraPrefab =
-                //    (GameObject)Resources.Load("Prefabs/Player/Main Camera");
                 GameObject cameraPrefab = (GameObject)Resources.Load("Main Camera");
                 _camera = GameObject.Instantiate<GameObject>(cameraPrefab);
             }
             return _camera;
         }
+
+        GameObject _forestBackGroundPrefab;
+        internal GameObject CreateForestBackground()
+        {
+            if (null == _forestBackGroundPrefab)
+            {
+                _forestBackGroundPrefab = (GameObject)Resources.Load("ForestBackground");
+            }
+
+            return GameObject.Instantiate<GameObject>(_forestBackGroundPrefab);
+        }
+
+
     }
 }
