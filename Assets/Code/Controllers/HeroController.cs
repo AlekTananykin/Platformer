@@ -35,6 +35,7 @@ namespace Assets.Code.Controllers
             _playerInput = playerInput;
             _gameObjectFabric = gameObjectFabric;
             _model = new HeroModel();
+
         }
 
         public void Execute(float deltaTime)
@@ -52,7 +53,7 @@ namespace Assets.Code.Controllers
                 TurnToward();
                 if ((_xAxisInput > _model.MovingEpsilon || !_contactPoller.HasLeftContacts) &&
                     (_xAxisInput < -_model.MovingEpsilon || !_contactPoller.HasRightContacts))
-                    newVelocity = _model.WalkSpeed * /*deltaTime */ Math.Sign(_xAxisInput);
+                    newVelocity = _model.WalkSpeed * Math.Sign(_xAxisInput);
             }
 
             _view.RidgidBody.velocity =
@@ -79,6 +80,7 @@ namespace Assets.Code.Controllers
             }
 
             _spriteAnimator.Update(deltaTime);
+            Position?.Invoke(_view.RidgidBody.transform.position);
         }
 
         public void Initialize()
@@ -102,6 +104,8 @@ namespace Assets.Code.Controllers
 
             _spriteAnimator.StartAnimation(
                 _view.SpriteRenderer, Track.walk, true, _model.AnimationSpeed);
+
+            Position?.Invoke(_view.RidgidBody.transform.position);
         }
 
         private CapsuleCollider2D AddCapsuleCollider(GameObject hero)
@@ -132,6 +136,8 @@ namespace Assets.Code.Controllers
         {
             _view.SpriteRenderer.flipX = _xAxisInput < 0;
         }
+
+        internal Action<Vector2> Position;
 
     }
 }

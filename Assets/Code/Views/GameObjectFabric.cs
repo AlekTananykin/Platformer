@@ -23,6 +23,7 @@ namespace Assets.Code.Views
             return _charecter;
         }
 
+
         private GameObject _ogrePrefab;
         internal GameObject CreateOgre()
         {
@@ -61,6 +62,19 @@ namespace Assets.Code.Views
                 _bulletPrefab = Resources.Load<GameObject>("Bullet");
             }
             return GameObject.Instantiate(_bulletPrefab);
+        }
+
+        GameObject _camera;
+        internal GameObject CreateMainCamera()
+        {
+            if (null == _camera)
+            {
+                //GameObject cameraPrefab =
+                //    (GameObject)Resources.Load("Prefabs/Player/Main Camera");
+                GameObject cameraPrefab = (GameObject)Resources.Load("Main Camera");
+                _camera = GameObject.Instantiate<GameObject>(cameraPrefab);
+            }
+            return _camera;
         }
     }
 }

@@ -24,7 +24,11 @@ public class GameController : MonoBehaviour
         _gameObjectsFabric = new GameObjectFabric();
         _playerInput = new PlayerPcInput();
 
+        CameraController camera = new CameraController(_gameObjectsFabric);
+        _controlersStorage.Add(camera);
+
         HeroController hero = new HeroController(_gameObjectsFabric, _playerInput);
+        hero.Position += camera.SetPosition;
         _controlersStorage.Add(hero);
 
         CannonController cannon = new CannonController(_gameObjectsFabric);
