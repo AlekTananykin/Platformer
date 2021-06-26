@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Assets.Code.Controllers
 {
-    internal class HeroController : IExecute, IInitialization
+    internal class HeroController : CharController, IExecute, IInitialization
     {
         private HeroView _view;
         private HeroModel _model;
@@ -91,11 +91,14 @@ namespace Assets.Code.Controllers
             _view = hero.AddComponent<HeroView>();
             _view.SpriteRenderer = hero.GetComponentInChildren<SpriteRenderer>();
 
-            _view.RidgidBody = AddRigidBody(hero);
+            _view.RidgidBody = AddRigidBody(hero, 60f, "Hero");
             _view.Transform = _view.RidgidBody.transform;
             _view.Transform.position = new Vector3(-8f, _groundLevel, 0f);
 
-            CapsuleCollider2D collider = AddCapsuleCollider(hero);
+            Vector2 colliderOffset = new Vector2(-0.2f, 1.1f);
+            Vector2 colliderSize = new Vector2(0.8f, 2.1f);
+            CapsuleCollider2D collider = AddCapsuleCollider(
+                hero, colliderOffset, colliderSize);
             _contactPoller = new ContactsPoller(collider);
 
             _animationsConfig =
@@ -106,30 +109,6 @@ namespace Assets.Code.Controllers
                 _view.SpriteRenderer, Track.walk, true, _model.AnimationSpeed);
 
             Position?.Invoke(_view.RidgidBody.transform.position);
-        }
-
-        private CapsuleCollider2D AddCapsuleCollider(GameObject hero)
-        {
-            var collider = hero.AddComponent<CapsuleCollider2D>();
-            collider.isTrigger = false;
-            collider.usedByEffector = false;
-            collider.offset = new Vector2(-0.2f, 1.1f);
-            collider.size = new Vector2(0.8f, 2.1f);
-
-            collider.direction = CapsuleDirection2D.Vertical;
-            return collider;
-        }
-
-        private Rigidbody2D AddRigidBody(GameObject hero)
-        {
-            var rigidbody = hero.AddComponent<Rigidbody2D>();
-            rigidbody.bodyType = RigidbodyType2D.Dynamic;
-            rigidbody.centerOfMass = new Vector2(0, 0);
-            rigidbody.freezeRotation = true;
-            rigidbody.isKinematic = false;
-            rigidbody.mass = 60;
-            rigidbody.name = "Hero";
-            return rigidbody;
         }
 
         private void TurnToward()

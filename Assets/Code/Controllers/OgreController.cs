@@ -11,20 +11,20 @@ using UnityEngine;
 
 namespace Assets.Code.Controllers
 {
-    class OgreController : IExecute, IInitialization
+    class OgreController : CharController, IExecute, IInitialization
     {
         private OgreView _view;
         private OgreModel _model;
+        private SpriteAnimationConfig _animationsConfig;
+        private SpriteAnimator _spriteAnimator;
         private GameObjectFabric _gameObjectFabric;
 
-        SpriteAnimator _spriteAnimator;
-
-        internal OgreController(GameObjectFabric gameObjectFabric)
+        internal OgreController(GameObjectFabric gameObjectFabric, Vector2 initPosition)
         {
             _gameObjectFabric = gameObjectFabric;
             _model = new OgreModel();
 
-            
+            _model.InitPosition = initPosition;
         }
 
         public void Execute(float deltaTime)
@@ -34,17 +34,28 @@ namespace Assets.Code.Controllers
 
         public void Initialize()
         {
-            GameObject ogreView = _gameObjectFabric.CreateOgre();
-            SpriteRenderer renderer = ogreView.GetComponentInChildren<SpriteRenderer>();
+            GameObject ogre = _gameObjectFabric.CreateOgre();
+            SpriteRenderer renderer = ogre.GetComponentInChildren<SpriteRenderer>();
 
-            _view = new OgreView() { SpriteRenderer = renderer };
+            _view = ogre.AddComponent<OgreView>();
+            _view.SpriteRenderer = ogre.GetComponentInChildren<SpriteRenderer>();
+
+            _view.RidgidBody = AddRigidBody(ogre, 60f, "Ogre");
+            _view.Transform = _view.RidgidBody.transform;
+            _view.Transform.position = new Vector3(8f, 2f, 0f);
+
+            Vector2 colliderOffset = new Vector2(0.1f, -0.88f);
+            Vector2 colliderSize = new Vector2(1.3f, 1.9f);
+            AddCapsuleCollider(
+                ogre, colliderOffset, colliderSize);
 
             SpriteAnimationConfig config =
                 (SpriteAnimationConfig)Resources.Load("OgreSpriteAnimationConfig");
 
             _spriteAnimator = new SpriteAnimator(config);
 
-            _spriteAnimator.StartAnimation(_view.SpriteRenderer, Track.idle, true, _model.AnimationSpeed);
+            _spriteAnimator.StartAnimation(
+                _view.SpriteRenderer, Track.walk, true, _model.AnimationSpeed);
         }
     }
 }

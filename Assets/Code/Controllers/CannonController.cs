@@ -36,6 +36,8 @@ namespace Assets.Code.Controllers
         public void Execute(float deltaTime)
         {
             Vector3 dir = _aimTransform.position - _muzzleTransform.position;
+            if (dir.magnitude > 5)
+                return;
 
             var angle = Vector3.Angle(Vector3.down, dir);
             var axis = Vector3.Cross(Vector3.down, dir);

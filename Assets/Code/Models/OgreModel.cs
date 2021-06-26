@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Code.Models
 {
@@ -14,5 +15,7 @@ namespace Assets.Code.Models
         internal readonly float MovingEpsilon = 0.1f;
 
         internal readonly float Gravity = -9.8f;
+
+        internal Vector2 InitPosition;
     }
 }

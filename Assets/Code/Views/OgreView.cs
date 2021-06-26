@@ -11,5 +11,6 @@ namespace Assets.Code.Views
     {
         public SpriteRenderer SpriteRenderer;
         public Transform Transform;
+        public Rigidbody2D RidgidBody;
     }
 }
