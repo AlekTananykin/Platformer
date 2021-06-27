@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Assets.Code.Controllers
 {
-    internal class HeroController : CharController, IExecute, IInitialization
+    internal class HeroController : CharController, IExecute, IInitialization, ITarget
     {
         private HeroView _view;
         private HeroModel _model;

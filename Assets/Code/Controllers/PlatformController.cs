@@ -1,4 +1,5 @@
-﻿using Assets.Code.Interfaces;
+﻿using Assets.Code.Auxiliary;
+using Assets.Code.Interfaces;
 using Assets.Code.Views;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Assets.Code.Controllers
         {
             GameObject platform =_gameObjectFabric.CreatePlatform();
             platform.transform.position = _position;
-            
+            platform.layer = (int)LayerCodes.PathFinderObstacle; 
 
             AddCollider(platform);
         }

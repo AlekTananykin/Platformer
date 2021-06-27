@@ -30,16 +30,19 @@ public class GameController : MonoBehaviour
 
         AddPlatforms(_controlersStorage);
 
+        
         HeroController hero = new HeroController(_gameObjectsFabric, _playerInput);
         hero.Position += camera.SetPosition;
         _controlersStorage.Add(hero);
+        
 
         CannonController cannon = new CannonController(_gameObjectsFabric);
         _controlersStorage.Add(cannon);
 
-        Vector2 ogrePosition = new Vector2() {x=15, y=3};
+
+        Vector2 ogrePosition = new Vector2() { x = 15, y = 3 };
         OgreController ogre = new OgreController(
-            _gameObjectsFabric, ogrePosition);
+            _gameObjectsFabric, ogrePosition, hero);
         _controlersStorage.Add(ogre);
 
         _controlersStorage.Initialize();
@@ -51,19 +54,20 @@ public class GameController : MonoBehaviour
     {
         PlatformController platform1 =
             new PlatformController(_gameObjectsFabric, new Vector2(-10f, -1.97f));
+        
         _controlersStorage.Add(platform1);
 
         PlatformController platform2 =
             new PlatformController(_gameObjectsFabric, new Vector2(-1.48f, -0.77f));
         _controlersStorage.Add(platform2);
 
-        //PlatformController platform3 =
-        //    new PlatformController(_gameObjectsFabric, new Vector2(7.9f, -1f));
-        //_controlersStorage.Add(platform3);
+        PlatformController platform3 =
+            new PlatformController(_gameObjectsFabric, new Vector2(7.9f, -1f));
+        _controlersStorage.Add(platform3);
 
-        //PlatformController platform4 =
-        //    new PlatformController(_gameObjectsFabric, new Vector2(16f, -2.43f));
-        //_controlersStorage.Add(platform3);
+        PlatformController platform4 =
+            new PlatformController(_gameObjectsFabric, new Vector2(16f, -2.43f));
+        _controlersStorage.Add(platform3);
     }
 
     void FixedUpdate()

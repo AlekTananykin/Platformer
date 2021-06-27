@@ -2,11 +2,7 @@
 using Assets.Code.Interfaces;
 using Assets.Code.Models;
 using Assets.Code.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Pathfinding;
 using UnityEngine;
 
 namespace Assets.Code.Controllers
@@ -15,16 +11,24 @@ namespace Assets.Code.Controllers
     {
         private OgreView _view;
         private OgreModel _model;
-        private SpriteAnimationConfig _animationsConfig;
         private SpriteAnimator _spriteAnimator;
         private GameObjectFabric _gameObjectFabric;
 
-        internal OgreController(GameObjectFabric gameObjectFabric, Vector2 initPosition)
+        private ITarget _target;
+
+        Seeker _seeker;
+        AIPath _aiPath;
+        AIDestinationSetter _destianetionSetter;
+
+        internal OgreController(GameObjectFabric gameObjectFabric, Vector2 initPosition, 
+            ITarget target)
         {
             _gameObjectFabric = gameObjectFabric;
             _model = new OgreModel();
 
             _model.InitPosition = initPosition;
+
+            _target = target;
         }
 
         public void Execute(float deltaTime)
@@ -49,6 +53,10 @@ namespace Assets.Code.Controllers
             AddCapsuleCollider(
                 ogre, colliderOffset, colliderSize);
 
+            AddSeeker(ogre);
+            AddAIPath2D(ogre);
+            AddAiDestinationSetter(ogre);
+
             SpriteAnimationConfig config =
                 (SpriteAnimationConfig)Resources.Load("OgreSpriteAnimationConfig");
 
@@ -56,6 +64,28 @@ namespace Assets.Code.Controllers
 
             _spriteAnimator.StartAnimation(
                 _view.SpriteRenderer, Track.walk, true, _model.AnimationSpeed);
+        }
+
+        private void AddAiDestinationSetter(GameObject ogre)
+        {
+            _destianetionSetter = ogre.AddComponent<AIDestinationSetter>();
+            _destianetionSetter.target = _target.Transform;
+        }
+
+        private void AddAIPath2D(GameObject ogre)
+        {
+            _aiPath =  ogre.AddComponent<AIPath>();
+            _aiPath.orientation = OrientationMode.YAxisForward;
+            _aiPath.maxSpeed = 2;
+            _aiPath.canMove = true;
+            _aiPath.alwaysDrawGizmos = true;
+            _aiPath.whenCloseToDestination = CloseToDestinationMode.Stop;
+            _aiPath.rotationSpeed = 0;
+        }
+
+        private void AddSeeker(GameObject ogre)
+        {
+            _seeker = ogre.AddComponent<Seeker>();
         }
     }
 }

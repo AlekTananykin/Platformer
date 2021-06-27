@@ -11,8 +11,6 @@ namespace Assets.Code.Models
 {
     public class StalkerAIModel
     {
-       
-
         private readonly AIConfig _config;
         private Path _path;
         private int _currentPointIndex;
