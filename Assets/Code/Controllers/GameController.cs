@@ -1,5 +1,6 @@
 using Assets.Code.Configs;
 using Assets.Code.Controllers;
+using Assets.Code.PlatformGenerator;
 using Assets.Code.PlayerInput;
 using Assets.Code.Views;
 using System;
@@ -18,6 +19,14 @@ public class GameController : MonoBehaviour
 
     IPlayerInput _playerInput;
 
+    GenerateLevelController _levelGenerator;
+
+    private void Awake()
+    {
+        var levelView = this.GetComponent<GenerateLevelView>();
+        _levelGenerator = new GenerateLevelController(levelView);
+        _levelGenerator.Awake();
+    }
 
     void Start()
     {
