@@ -22,8 +22,6 @@ namespace Assets.Code.Quests
         private void OnContact(object sender, 
             HeroView arg2)
         {
-            //var completed = _model.TryComplete(arg2.gameObject);
-            //if (completed) Complete();
 
             Debug.Log("Mission is compleeted! ");
             Complete();
