@@ -7,15 +7,14 @@ public class LevelObjectViewTrigger : MonoBehaviour
 {
     public SpriteRenderer SpriteRenderer;
     public Transform Transform;
-    public Rigidbody2D RidgidBody;
 
-    public event EventHandler<LevelObjectViewTrigger> OnLevelObjectContact;
+    public event EventHandler<HeroView> OnLevelObjectContact;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.TryGetComponent(out LevelObjectViewTrigger levelObject))
+        if (other.gameObject.TryGetComponent(out HeroView heroView))
         {
-            OnLevelObjectContact?.Invoke(this, levelObject);
+            OnLevelObjectContact?.Invoke(this, heroView);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Code.Quests
 {
@@ -19,10 +20,13 @@ namespace Assets.Code.Quests
         }
 
         private void OnContact(object sender, 
-            LevelObjectViewTrigger arg2)
+            HeroView arg2)
         {
-            var completed = _model.TryComplete(arg2.gameObject);
-            if (completed) Complete();
+            //var completed = _model.TryComplete(arg2.gameObject);
+            //if (completed) Complete();
+
+            Debug.Log("Mission is compleeted! ");
+            Complete();
         }
 
         private void Complete()
