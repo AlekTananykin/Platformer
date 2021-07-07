@@ -86,6 +86,15 @@ namespace Assets.Code.Views
             return GameObject.Instantiate<GameObject>(_forestBackGroundPrefab);
         }
 
+        GameObject _repulsiveCrystalPrefab;
+        internal GameObject CreateRepulsiveCrystal()
+        {
+            if (null == _repulsiveCrystalPrefab)
+            {
+                _repulsiveCrystalPrefab = (GameObject)Resources.Load("RepulsiveCrystal");
+            }
+            return GameObject.Instantiate(_repulsiveCrystalPrefab);
+        }
 
     }
 }

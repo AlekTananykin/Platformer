@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         _controlersStorage = new ControllersStorage();
         _gameObjectsFabric = new GameObjectFabric();
         _playerInput = new PlayerPcInput();
@@ -39,6 +41,9 @@ public class GameController : MonoBehaviour
 
         AddPlatforms(_controlersStorage);
 
+        RepulsiveCrystalController crystal = 
+            new RepulsiveCrystalController(_gameObjectsFabric, new Vector2(-35.4f, -1.95f));
+        _controlersStorage.Add(crystal);
         
         HeroController hero = new HeroController(_gameObjectsFabric, _playerInput);
         hero.Position += camera.SetPosition;
@@ -61,22 +66,25 @@ public class GameController : MonoBehaviour
 
     private void AddPlatforms(ControllersStorage controlersStorage)
     {
-        PlatformController platform1 =
-            new PlatformController(_gameObjectsFabric, new Vector2(-10f, -1.97f));
-        
-        _controlersStorage.Add(platform1);
+        List<Vector2> platformsPositions =
+            new List<Vector2>() {
+                new Vector2(-10f, -1.97f),
+                new Vector2(-1.48f, -0.77f),
+                new Vector2(7.9f, -1f),
+                new Vector2(-18f, -2.43f),
+                new Vector2(-20.85f, 2.37f),
+                new Vector2(-21.46f, -5.82f),
+                new Vector2(-26.6f, -2.51f),
+                new Vector2(-35.4f, -2.48f)
+            };
 
-        PlatformController platform2 =
-            new PlatformController(_gameObjectsFabric, new Vector2(-1.48f, -0.77f));
-        _controlersStorage.Add(platform2);
+        for (int i = 0; i < platformsPositions.Count; ++i)
+        {
+            PlatformController platform = new PlatformController(
+                _gameObjectsFabric, platformsPositions[i]);
 
-        PlatformController platform3 =
-            new PlatformController(_gameObjectsFabric, new Vector2(7.9f, -1f));
-        _controlersStorage.Add(platform3);
-
-        PlatformController platform4 =
-            new PlatformController(_gameObjectsFabric, new Vector2(16f, -2.43f));
-        _controlersStorage.Add(platform3);
+            _controlersStorage.Add(platform);
+        }
     }
 
     void FixedUpdate()
